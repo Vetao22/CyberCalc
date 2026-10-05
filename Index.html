@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cyberpunk Neon Calculator</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link to Stylesheet -->
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <div class="calculator-container">
+        <!-- Top Toolbar -->
+        <header class="header">
+            <div class="brand">
+                <i class="fa-solid fa-microchip"></i>
+                <span id="app-title">CYBER.CALC</span>
+            </div>
+            <div class="controls">
+                <button class="icon-btn" id="lang-toggle" title="Switch Language">
+                    <i class="fa-solid fa-globe"></i>
+                </button>
+                <button class="icon-btn" id="history-toggle" title="View History">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mode Switches -->
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="basic" id="mode-basic">Básico</button>
+            <button class="mode-btn" data-mode="scientific" id="mode-sci">Científica</button>
+            <button class="mode-btn" data-mode="financial" id="mode-fin">Financeira</button>
+        </div>
+
+        <!-- Display Screen -->
+        <div class="display-area">
+            <div class="expression" id="expr-display"></div>
+            <div class="active-input" id="main-display">0</div>
+            <div class="preview-result" id="preview-display"></div>
+        </div>
+
+        <!-- Keypads Grid -->
+        <div class="keypad-container">
+            <div class="keypad-grid" id="keypad">
+                <!-- Dynamically populated by JavaScript based on Mode -->
+            </div>
+        </div>
+
+        <!-- Interactive History Panel Drawer -->
+        <div class="history-drawer" id="history-drawer">
+            <div class="history-header">
+                <div class="history-title">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span id="history-head-label">Histórico Temporal</span>
+                </div>
+                <div style="display: flex; gap: 8px;">
+                    <button class="icon-btn" id="clear-history" title="Clear History">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                    <button class="icon-btn" id="close-history">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="history-list" id="history-list">
+                <!-- History Items injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript Logic -->
+    <script src="Script.js"></script>
+</body>
+</html>
